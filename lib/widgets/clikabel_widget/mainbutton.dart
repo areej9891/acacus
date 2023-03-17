@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+
+import '../../helpers/consts.dart';
+
+class MainButton extends StatefulWidget {
+  const MainButton({
+    super.key,
+    required this.text,
+    required this.withBorder,
+    this.widthFromScreen = 0.9,
+    required this.isLoading,
+  });
+  final String text;
+  final bool withBorder;
+  final double widthFromScreen;
+  final bool isLoading;
+
+  @override
+  State<MainButton> createState() => _MainButtonState();
+}
+
+class _MainButtonState extends State<MainButton> {
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return GestureDetector(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          height: 50,
+          width: size.width * widget.widthFromScreen,
+          decoration: BoxDecoration(
+              color: widget.withBorder ? Colors.white : mainColor,
+              border: Border.all(
+                  color: widget.withBorder ? mainColor : Colors.white,
+                  width: 2),
+              borderRadius: BorderRadius.circular(10)),
+          child: Center(
+              child: widget.isLoading
+                  ? CircularProgressIndicator(
+                      color: widget.withBorder ? mainColor : Colors.white,
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(
+                        widget.text,
+                        style: TextStyle(
+                            color:
+                                widget.withBorder ? mainColor : Colors.white),
+                      ),
+                    )),
+        ),
+      ),
+    );
+  }
+}
