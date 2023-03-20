@@ -15,7 +15,7 @@ class _PlaceCardState extends State<PlaceCard> {
     return Stack(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Container(
               decoration: BoxDecoration(
                   border:
@@ -31,12 +31,12 @@ class _PlaceCardState extends State<PlaceCard> {
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20)),
                       child: Image.network(
-                        "https://media.istockphoto.com/id/1364745633/photo/rear-view-of-a-woman-with-a-hat-while-shes-admiring-an-ancient-temple-in-sicily.jpg?s=1024x1024&w=is&k=20&c=bFalQeJ9MToCxgM5bdHDJVB9IHU7QAdoAtSUYYgEpgg=",
+                        "https://images.unsplash.com/photo-1589177900075-9d13b4451617?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80",
                         fit: BoxFit.cover,
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -92,12 +92,14 @@ class _PlaceCardState extends State<PlaceCard> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
-                        children:  [
+                        children: [
                           MainButton(
                             text: "قراءة المزيــد",
                             withBorder: true,
                             isLoading: false,
                             widthFromScreen: 0.33,
+                            isloading: false,
+                            onPressed: () {},
                           )
                         ],
                       ),

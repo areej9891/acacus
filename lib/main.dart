@@ -1,5 +1,5 @@
 import 'package:acacus_app/helpers/consts.dart';
-import 'package:acacus_app/splash_screen.dart';
+import 'package:acacus_app/screens/auth_screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

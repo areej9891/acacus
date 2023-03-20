@@ -38,6 +38,7 @@ dependencies:
   google_fonts:
   introduction_screen:
   smooth_page_indicator:
+  pin_code_fields:
 
 dev_dependencies:
   flutter_test:

@@ -1,10 +1,7 @@
 import 'dart:async';
-
-import 'package:acacus_app/onboarding_screen.dart';
-
+import 'package:acacus_app/screens/auth_screens/intro_screen.dart';
 import 'package:flutter/material.dart';
-
-import 'helpers/consts.dart';
+import '../../helpers/consts.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,8 +17,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const OnboardingScreen()));
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => const IntroScreen()));
   }
 
   @override

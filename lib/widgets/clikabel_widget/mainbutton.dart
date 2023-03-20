@@ -8,12 +8,14 @@ class MainButton extends StatefulWidget {
     required this.text,
     required this.withBorder,
     this.widthFromScreen = 0.9,
-    required this.isLoading,
+    required this.isloading,
+    required this.onPressed, required bool isLoading,
   });
   final String text;
   final bool withBorder;
   final double widthFromScreen;
-  final bool isLoading;
+  final bool isloading;
+  final Function onPressed;
 
   @override
   State<MainButton> createState() => _MainButtonState();
@@ -24,6 +26,9 @@ class _MainButtonState extends State<MainButton> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return GestureDetector(
+      onTap: () {
+        widget.onPressed();
+      },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
@@ -36,7 +41,7 @@ class _MainButtonState extends State<MainButton> {
                   width: 2),
               borderRadius: BorderRadius.circular(10)),
           child: Center(
-              child: widget.isLoading
+              child: widget.isloading
                   ? CircularProgressIndicator(
                       color: widget.withBorder ? mainColor : Colors.white,
                     )
