@@ -9,13 +9,15 @@ class MainButton extends StatefulWidget {
     required this.withBorder,
     this.widthFromScreen = 0.9,
     required this.isloading,
-    required this.onPressed, required bool isLoading,
+    required this.onPressed,
+    this.isActive = true,
   });
   final String text;
   final bool withBorder;
   final double widthFromScreen;
   final bool isloading;
   final Function onPressed;
+  final bool isActive;
 
   @override
   State<MainButton> createState() => _MainButtonState();
@@ -27,7 +29,9 @@ class _MainButtonState extends State<MainButton> {
     Size size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
-        widget.onPressed();
+        if (widget.isActive) {
+          widget.onPressed();
+        }
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),

@@ -65,7 +65,10 @@ class _PinCodeFieldScreenState extends State<PinCodeFieldScreen> {
                 enableActiveFill: true,
                 textStyle: const TextStyle(
                     fontSize: 20, fontWeight: FontWeight.normal),
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                inputFormatters: [
+                  FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))
+                ],
+                animationType: AnimationType.slide,
                 pinTheme: PinTheme(
                     shape: PinCodeFieldShape.box,
                     fieldWidth: 50,
@@ -77,6 +80,7 @@ class _PinCodeFieldScreenState extends State<PinCodeFieldScreen> {
                     inactiveFillColor: mainColor.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(16),
                     borderWidth: 1),
+                onCompleted: (value) {},
                 onChanged: (value) {},
               ),
             ),
@@ -93,7 +97,6 @@ class _PinCodeFieldScreenState extends State<PinCodeFieldScreen> {
                     CupertinoPageRoute(
                         builder: ((context) => const LoginScreen())));
               },
-              isLoading: true,
             ),
             MainButton(
               text: "الرجوع",
@@ -103,7 +106,6 @@ class _PinCodeFieldScreenState extends State<PinCodeFieldScreen> {
                   context,
                 );
               },
-              isLoading: false,
               isloading: false,
             ),
           ],

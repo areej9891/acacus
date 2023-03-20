@@ -88,13 +88,13 @@ class _IntroScreenState extends State<IntroScreen> {
                     color: mainColor.withOpacity(0.5),
                     activeColor: mainColor),
                 onSkip: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const HomeScreen()));
                 },
                 onDone: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const LoginScreen()));

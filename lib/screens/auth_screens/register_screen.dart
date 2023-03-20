@@ -145,10 +145,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
         withBorder: false,
         isloading: false,
         onPressed: () {
-          Navigator.push(context,
+          Navigator.pushReplacement(context,
               CupertinoPageRoute(builder: ((context) => const HomeScreen())));
         },
-        isLoading: true,
       ),
       MainButton(
         text: " لديك حساب؟ سجل الدخول ",
@@ -158,7 +157,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
               CupertinoPageRoute(builder: ((context) => const LoginScreen())));
         },
         isloading: false,
-        isLoading: false,
       ),
     ])));
   }

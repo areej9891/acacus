@@ -133,12 +133,11 @@ class _LoginScreenState extends State<LoginScreen> {
               withBorder: false,
               isloading: false,
               onPressed: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
                     CupertinoPageRoute(
                         builder: ((context) => const HomeScreen())));
               },
-              isLoading: true,
             ),
             MainButton(
               text: "ليس لديك حساب؟ سجل الآن",
@@ -149,7 +148,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     CupertinoPageRoute(
                         builder: ((context) => const RegisterScreen())));
               },
-              isLoading: false,
               isloading: false,
             ),
           ],

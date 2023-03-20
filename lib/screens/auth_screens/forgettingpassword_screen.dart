@@ -64,7 +64,6 @@ class _ForgettingPasswordScreenState extends State<ForgettingPasswordScreen> {
                     CupertinoPageRoute(
                         builder: ((context) => const PinCodeFieldScreen())));
               },
-              isLoading: true,
             ),
             MainButton(
               text: "الرجوع",
@@ -74,7 +73,6 @@ class _ForgettingPasswordScreenState extends State<ForgettingPasswordScreen> {
                   context,
                 );
               },
-              isLoading: false,
               isloading: false,
             ),
           ],
